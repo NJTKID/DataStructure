@@ -5,6 +5,7 @@ public class Array<E> {
 	private int size;
 	
 	//构造函数，传入数组的容量capacity构造Array
+	@SuppressWarnings("unchecked")
 	public Array(int capacity){
 		data = (E[])new Object[capacity];
 		size = 0;
@@ -61,6 +62,14 @@ public class Array<E> {
 		if(index < 0 || index > size)
 			throw new IllegalArgumentException("Get failed. Index is illegal.");
 		return data[index];
+	}
+	
+	public E getLast(){
+		return get(size - 1);
+	}
+	
+	public E getFirst(){
+		return get(0);
 	}
 	
 	//index位置插入元素
