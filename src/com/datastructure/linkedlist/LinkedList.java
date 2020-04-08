@@ -29,7 +29,7 @@ public class LinkedList<E> {
 	}
 	
 	//private Node head;
-	private Node dummyHead;	//ÉèÖÃĞéÄâÍ·½áµãÒÔ½â¾öÁ´±íÃ»ÓĞÍ·²¿µÄÎÊÌâ£¨ÓÅ»¯´úÂë£©
+	private Node dummyHead;	//è®¾ç½®è™šæ‹Ÿå¤´ç»“ç‚¹ä»¥è§£å†³é“¾è¡¨æ²¡æœ‰å¤´éƒ¨çš„é—®é¢˜ï¼ˆä¼˜åŒ–ä»£ç ï¼‰
 	private int size;
 	
 	public LinkedList(){
@@ -38,20 +38,20 @@ public class LinkedList<E> {
 		size = 0;
 	}
 	
-	//»ñÈ¡Á´±íÖĞµÄÔªËØ¸öÊı
+	// è·å–é“¾è¡¨ä¸­çš„å…ƒç´ ä¸ªæ•°
 	public int getSize(){
 		return size;
 	}
 	
-	//·µ»ØÁ´±íÊÇ·ñÎª¿Õ
+	// è¿”å›é“¾è¡¨æ˜¯å¦ä¸ºç©º
 	public boolean isEmpty(){
 		return size == 0;
 	}
 	
 	
 	
-	//ÔÚÁ´±íµÄindex(0-based)Î»ÖÃÌí¼ÓĞÂµÄÔªËØe
-	//ÔÚÁ´±íÖĞ²»ÊÇÒ»¸ö³£ÓÃµÄ²Ù×÷£¬Á·Ï°ÓÃ
+	// åœ¨é“¾è¡¨çš„index(0-based)ä½ç½®æ·»åŠ æ–°çš„å…ƒç´ e
+    // åœ¨é“¾è¡¨ä¸­ä¸æ˜¯ä¸€ä¸ªå¸¸ç”¨çš„æ“ä½œï¼Œç»ƒä¹ ç”¨ï¼šï¼‰
 	public void add(int index,E e){
 		if(index < 0 || index > size)
 			throw new IllegalArgumentException("Add failed.Illegal index.");
@@ -74,11 +74,11 @@ public class LinkedList<E> {
 //		Node node = new Node(e);
 //		node.next = prev.next;
 //		prev.next = node;
-		prev.next = new Node(e,prev.next);	//Ò»ĞĞ´úÂëµÖÈıĞĞ
+		prev.next = new Node(e,prev.next);	//ä¸€è¡Œä»£ç æŠµä¸‰è¡Œ
 		size ++;
 	}
 	
-	//ÔÚÁ´±íÍ·Ìí¼ÓĞÂµÄÔªËØe
+	// åœ¨é“¾è¡¨å¤´æ·»åŠ æ–°çš„å…ƒç´ e
 		public void addFirst(E e){
 //			Node node = new Node(e);
 //			node.next = head;
@@ -89,13 +89,13 @@ public class LinkedList<E> {
 			add(0,e);
 		}
 	
-	//ÔÚÁ´±íÄ©Î²Ìí¼ÓĞÂµÄÔªËØe
+	// åœ¨é“¾è¡¨æœ«å°¾æ·»åŠ æ–°çš„å…ƒç´ e
 	public void addLast(E e){
 		add(size,e);
 	}
 	
-	//»ñµÃÁ´±íµÄµÚindex(0-based)¸öÎ»ÖÃµÄÔªËØ
-	//ÔÚÁ´±íÖĞ²»ÊÇÒ»¸ö³£ÓÃµÄ²Ù×÷£¬Á·Ï°ÓÃ
+	// è·å¾—é“¾è¡¨çš„ç¬¬index(0-based)ä¸ªä½ç½®çš„å…ƒç´ 
+    // åœ¨é“¾è¡¨ä¸­ä¸æ˜¯ä¸€ä¸ªå¸¸ç”¨çš„æ“ä½œï¼Œç»ƒä¹ ç”¨ï¼šï¼‰
 	public E get(int index){
 		
 		if(index < 0 || index >= size)
@@ -108,18 +108,18 @@ public class LinkedList<E> {
 	
 	}
 	
-	//»ñµÃÁ´±íµÄµÚÒ»¸öÔªËØ
+	// è·å¾—é“¾è¡¨çš„ç¬¬ä¸€ä¸ªå…ƒç´ 
 	public E getFirst(){
 		return get(0);
 	}
 	
-	//»ñµÃÁ´±íµÄ×îºóÒ»¸öÔªËØ
+	// è·å¾—é“¾è¡¨çš„æœ€åä¸€ä¸ªå…ƒç´ 
 	public E getLast(){
 		return get(size - 1);
 	}
 	
-	//»ñµÃÁ´±íµÄµÚindex(0-based)¸öÎ»ÖÃµÄÔªËØ
-	//ÔÚÁ´±íÖĞ²»ÊÇÒ»¸ö³£ÓÃµÄ²Ù×÷£¬Á·Ï°ÓÃ
+	// ä¿®æ”¹é“¾è¡¨çš„ç¬¬index(0-based)ä¸ªä½ç½®çš„å…ƒç´ ä¸ºe
+    // åœ¨é“¾è¡¨ä¸­ä¸æ˜¯ä¸€ä¸ªå¸¸ç”¨çš„æ“ä½œï¼Œç»ƒä¹ ç”¨ï¼šï¼‰
 	public void set(int index,E e){
 		
 		if(index < 0 || index >= size)
@@ -131,7 +131,7 @@ public class LinkedList<E> {
 		cur.e = e;
 	}
 	
-	//²éÕÒÁ´±íÖĞÊÇ·ñÓĞÔªËØe
+	// æŸ¥æ‰¾é“¾è¡¨ä¸­æ˜¯å¦æœ‰å…ƒç´ e
 	public boolean cotains(E e){
 		Node cur = dummyHead.next;
 		while(cur != null){
@@ -142,8 +142,8 @@ public class LinkedList<E> {
 		return false;
 	}
 	
-	//´ÓÁ´±íÖĞÉ¾³ıindex(0-based)Î»ÖÃµÄÔªËØ£¬·µ»ØÉ¾³ıµÄÔªËØ
-	//ÔÚÁ´±íÖĞ²»ÊÇÒ»¸ö³£ÓÃµÄ²Ù×÷£¬Á·Ï°ÓÃ
+	// ä»é“¾è¡¨ä¸­åˆ é™¤index(0-based)ä½ç½®çš„å…ƒç´ , è¿”å›åˆ é™¤çš„å…ƒç´ 
+    // åœ¨é“¾è¡¨ä¸­ä¸æ˜¯ä¸€ä¸ªå¸¸ç”¨çš„æ“ä½œï¼Œç»ƒä¹ ç”¨ï¼šï¼‰
 	public E remove(int index){
 		if(index < 0 || index >= size)
 			throw new IllegalArgumentException("Remove failed.Index is illegal.");
@@ -160,15 +160,33 @@ public class LinkedList<E> {
 		return retNode.e;
 	}
 	
-	//´ÓÁ´±íÖĞÉ¾³ıµÚÒ»¸öÔªËØ£¬·µ»ØÉ¾³ıµÄÔªËØ
+	// ä»é“¾è¡¨ä¸­åˆ é™¤ç¬¬ä¸€ä¸ªå…ƒç´ , è¿”å›åˆ é™¤çš„å…ƒç´ 
 	public E removeFirst(){
 		return remove(0);
 	}
 	
-	//´ÓÁ´±íÖĞÉ¾³ıµÚÒ»¸öÔªËØ£¬·µ»ØÉ¾³ıµÄÔªËØ
+	// ä»é“¾è¡¨ä¸­åˆ é™¤æœ€åä¸€ä¸ªå…ƒç´ , è¿”å›åˆ é™¤çš„å…ƒç´ 
 	public E removeLast(){
 		return remove(size - 1);
 	}
+	
+	 // ä»é“¾è¡¨ä¸­åˆ é™¤å…ƒç´ e
+    public void removeElement(E e){
+
+        Node prev = dummyHead;
+        while(prev.next != null){
+            if(prev.next.e.equals(e))
+                break;
+            prev = prev.next;
+        }
+
+        if(prev.next != null){
+            Node delNode = prev.next;
+            prev.next = delNode.next;
+            delNode.next = null;
+            size --;
+        }
+    }
 	
 	@Override
 	public String toString(){
