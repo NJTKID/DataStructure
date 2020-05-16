@@ -28,13 +28,13 @@ public class testMain {
 		
 		ArrayStack<Integer> arrayStack = new ArrayStack<>();
 		double time1 = testStack(arrayStack,opCount);
-		System.out.println("ArrayStack，time" + time1 + "s");
+		System.out.println("ArrayStack锛宼ime" + time1 + "s");
 		
 		LinkedListStack<Integer> linkedListStack = new LinkedListStack<>();
 		double time2 = testStack(linkedListStack,opCount);
-		System.out.println("LinkedListStack，time" + time2 + "s");
+		System.out.println("LinkedListStack锛宼ime" + time2 + "s");
 		
-		//其实这个时间复杂度比较复杂，因为LinkedListStack中包含更多的new操作
+		//鍏跺疄杩欎釜鏃堕棿澶嶆潅搴︽瘮杈冨鏉傦紝鍥犱负LinkedListStack涓寘鍚洿澶氱殑new鎿嶄綔
 	}
 
 }

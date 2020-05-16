@@ -61,7 +61,7 @@ public class LoopQueue<E> implements Queue<E>{
 	}
 	
 	public int getCapacity(){
-		return data.length - 1;//Ñ­»·¶ÓÁÐÀË·ÑÒ»¸ö¿Õ¼ä
+		return data.length - 1;//å¾ªçŽ¯é˜Ÿåˆ—æµªè´¹ä¸€ä¸ªç©ºé—´
 	}
 	
 	private void resize(int newCapacity){

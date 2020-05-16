@@ -26,14 +26,14 @@ public class Main {
 		
 		ArrayQueue<Integer> arrayQueue = new ArrayQueue<>();
 		double time1 = testQueue(arrayQueue,opCount);
-		System.out.println("ArrayQueue£¬time£º" + time1 + "s");
+		System.out.println("ArrayQueueï¼Œtimeï¼š" + time1 + "s");
 		
 		LoopQueue<Integer> loopQueue = new LoopQueue<>();
 		double time2 = testQueue(loopQueue,opCount);
-		System.out.println("LoopQueue£¬time£º" + time2 + "s");
+		System.out.println("LoopQueueï¼Œtimeï¼š" + time2 + "s");
 		
 		LinkedListQueue<Integer> linkedListQueue = new LinkedListQueue<>();
 		double time3 = testQueue(linkedListQueue,opCount);
-		System.out.println("linkedListQueue£¬time£º" + time3 + "s");
+		System.out.println("linkedListQueueï¼Œtimeï¼š" + time3 + "s");
 	}
 }

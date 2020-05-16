@@ -4,44 +4,44 @@ public class Array<E> {
 	private E[] data;
 	private int size;
 	
-	//¹¹Ôìº¯Êı£¬´«ÈëÊı×éµÄÈİÁ¿capacity¹¹ÔìArray
+	//æ„é€ å‡½æ•°ï¼Œä¼ å…¥æ•°ç»„çš„å®¹é‡capacityæ„é€ Array
 	@SuppressWarnings("unchecked")
 	public Array(int capacity){
 		data = (E[])new Object[capacity];
 		size = 0;
 	}
 	
-	//ÎŞ²ÎÊıµÄ¹¹Ôìº¯Êı£¬Ä¬ÈÏÊı×éµÄÈİÁ¿capacity=10
+	//æ— å‚æ•°çš„æ„é€ å‡½æ•°ï¼Œé»˜è®¤æ•°ç»„çš„å®¹é‡capacity=10
 	public Array(){
 		this(10);
 	}
 	
-	//»ñÈ¡Êı×éÖĞµÄÔªËØ¸öÊı
+	//è·å–æ•°ç»„ä¸­çš„å…ƒç´ ä¸ªæ•°
 	public int getSize(){
 		return size;
 	}
 	
-	//»ñÈ¡Êı×éµÄÈİÁ¿
+	//è·å–æ•°ç»„çš„å®¹é‡
 	public int getCapacity(){
 		return data.length;
 	}
 	
-	//·µ»ØÊı×éÊÇ·ñÎª¿Õ
+	//è¿”å›æ•°ç»„æ˜¯å¦ä¸ºç©º
 	public boolean isEmpty(){
 		return size==0;
 	}
 	
-	//ÏòËùÓĞÔªËØºóÌí¼ÓÒ»¸öĞÂÔªËØ
+	//å‘æ‰€æœ‰å…ƒç´ åæ·»åŠ ä¸€ä¸ªæ–°å…ƒç´ 
 	public void addLast(E e){
 		add(size,e);
 	}
 	
-	//ÔÚËùÓĞÔªËØÇ°Ìí¼ÓÒ»¸öĞÂÔªËØ
+	//åœ¨æ‰€æœ‰å…ƒç´ å‰æ·»åŠ ä¸€ä¸ªæ–°å…ƒç´ 
 	public void addFirst(E e){
 		add(0,e);
 	}
 	
-	//ÔÚµÚindex¸öÎ»ÖÃ²åÈëÒ»¸öĞÂÔªËØe
+	//åœ¨ç¬¬indexä¸ªä½ç½®æ’å…¥ä¸€ä¸ªæ–°å…ƒç´ e
 	public void add(int index,E e) {
 		
 		if(index < 0 || index > size)
@@ -57,7 +57,7 @@ public class Array<E> {
 		size++;
 	}
 	
-	//»ñÈ¡indexË÷ÒıÎ»ÖÃµÄÔªËØ
+	//è·å–indexç´¢å¼•ä½ç½®çš„å…ƒç´ 
 	public E get(int index){
 		if(index < 0 || index > size)
 			throw new IllegalArgumentException("Get failed. Index is illegal.");
@@ -72,14 +72,14 @@ public class Array<E> {
 		return get(0);
 	}
 	
-	//indexÎ»ÖÃ²åÈëÔªËØ
+	//indexä½ç½®æ’å…¥å…ƒç´ 
 	public void set(int index,E e){
 		if(index < 0 || index > size)
 			throw new IllegalArgumentException("set failed. Index is illegal.");
 		data[index] = e;
 	}
 	
-	//²éÕÒÊı×éÖĞÊÇ·ñÓĞÔªËØe
+	//æŸ¥æ‰¾æ•°ç»„ä¸­æ˜¯å¦æœ‰å…ƒç´ e
 	public boolean contains(E e){
 		for(int i = 0;i < size;i++){
 			if(data[i].equals(e))
@@ -88,7 +88,7 @@ public class Array<E> {
 		return false;
 	}
 	
-	//²éÕÒÊı×éÖĞÔªËØeËùÔÚµÄË÷Òı£¬Èç¹û²»´æÔÚÔªËØe£¬Ôò·µ»Ø-1
+	//æŸ¥æ‰¾æ•°ç»„ä¸­å…ƒç´ eæ‰€åœ¨çš„ç´¢å¼•ï¼Œå¦‚æœä¸å­˜åœ¨å…ƒç´ eï¼Œåˆ™è¿”å›-1
 	public int find(E e){
 		for(int i = 0;i < size;i++){
 			if(data[i].equals(e))
@@ -97,7 +97,7 @@ public class Array<E> {
 		return -1;
 	}
 	
-	//´ÓÊı×éÖĞÉ¾³ıIndexÎ»ÖÃµÄÔªËØ£¬·µ»ØÉ¾³ıµÄÔªËØ
+	//ä»æ•°ç»„ä¸­åˆ é™¤Indexä½ç½®çš„å…ƒç´ ï¼Œè¿”å›åˆ é™¤çš„å…ƒç´ 
 	public E remove(int index){
 		if(index < 0 || index > size)
 			throw new IllegalArgumentException("Remove failed. Index is illegal.");
@@ -112,21 +112,29 @@ public class Array<E> {
 		return ret;
 	}
 	
-	//´ÓÊı×éÖĞÉ¾³ıÔªËØe
+	//ä»æ•°ç»„ä¸­åˆ é™¤å…ƒç´ e
 	public void removeElement(E e){
 		int index = find(e);
 		if(index != -1 )
 			remove(index);
 	}
 	
-	//´ÓÊı×éÖĞÉ¾³ıµÚÒ»¸öÔªËØ£¬·µ»ØÉ¾³ıµÄÔªËØ
+	//ä»æ•°ç»„ä¸­åˆ é™¤ç¬¬ä¸€ä¸ªå…ƒç´ ï¼Œè¿”å›åˆ é™¤çš„å…ƒç´ 
 	public E removeFirst(){
 		return remove(0);
 	}
 	
-	//´ÓÊı×éÖĞÉ¾³ıµÚÒ»¸öÔªËØ£¬·µ»ØÉ¾³ıµÄÔªËØ
+	//ä»æ•°ç»„ä¸­åˆ é™¤ç¬¬ä¸€ä¸ªå…ƒç´ ï¼Œè¿”å›åˆ é™¤çš„å…ƒç´ 
 	public E removeLast(){
 		return remove(size - 1);
+	}
+	
+	public void swap(int i, int j){
+		if(i < 0 || i >= size || j < 0 || j >= size)
+			throw new IllegalArgumentException("Index is illegal");
+		E t = data[i];
+		data[i] = data[j];
+		data[j] = t;
 	}
 	
 	@Override
